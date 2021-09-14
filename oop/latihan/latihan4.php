@@ -61,11 +61,13 @@
                             return ($this->bil1 % $this->bil2);
                         }
 
-                        // public function __construct($ket)
-                        // {
-                        //     $this->ket = $ket;
-                        // }
+                       
 
+                        public function __construct($bil1,$bil2)
+                        {
+                            $this->bil1 = $bil1;
+                            $this->bil2 = $bil2;
+                        }
                     }
 
                     // $aritmatika->$bil1 = $_POST['bil1'];
@@ -73,10 +75,10 @@
 
                     // $aritmatika1 = new Aritmatika("Hasil penjumlahan : ");
                     // echo $aritmatika1->penjumlahan() . "<br>";
-                    $aritmatika = new Aritmatika();
+                    $aritmatika = new Aritmatika($bil1, $bil2);
 
-                    $bil1 = $_POST['bil1'];
-                    $bil2 = $_POST['bil2'];
+                    // $bil1 = $_POST['bil1'];
+                    // $bil2 = $_POST['bil2'];
 
                     echo "Hasil penjumlahan : " . $aritmatika->penjumlahan() . "<br>";
                     echo "Hasil pengurangan : " . $aritmatika->pengurangan() . "<br>";
