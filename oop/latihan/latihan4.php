@@ -30,11 +30,11 @@
                     $bil1 = $_POST['bil1'];
                     $bil2 = $_POST['bil2'];
 
-                    //{
+                    
                     class Aritmatika {
                         public $bil1;
                         public $bil2;
-                        //public $ket;
+                        
 
                         public function penjumlahan()
                         {
@@ -70,15 +70,8 @@
                         }
                     }
 
-                    // $aritmatika->$bil1 = $_POST['bil1'];
-                    // $aritmatika->$bil2 = $_POST['bil2'];
-
-                    // $aritmatika1 = new Aritmatika("Hasil penjumlahan : ");
-                    // echo $aritmatika1->penjumlahan() . "<br>";
+                   
                     $aritmatika = new Aritmatika($bil1, $bil2);
-
-                    // $bil1 = $_POST['bil1'];
-                    // $bil2 = $_POST['bil2'];
 
                     echo "Hasil penjumlahan : " . $aritmatika->penjumlahan() . "<br>";
                     echo "Hasil pengurangan : " . $aritmatika->pengurangan() . "<br>";
@@ -86,7 +79,7 @@
                     echo "Hasil pembagian : " . $aritmatika->pembagian() . "<br>";
                     echo "Hasil modulus : " . $aritmatika->modulus() . "<br>";
 
-                    //}
+                    
                 }
 
             ?>
