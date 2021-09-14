@@ -79,7 +79,7 @@
                     echo "Hasil pembagian : " . $aritmatika->pembagian() . "<br>";
                     echo "Hasil modulus : " . $aritmatika->modulus() . "<br>";
 
-                    
+
                 }
 
             ?>
