@@ -7,13 +7,13 @@
         <title>latihan 5</title>
     </head>
     <body>
-    <fieldset>
+        <fieldset>
             <legend>latihan 5</legend>
             <form action="" method="post">
                 <table>
                     <tr>
                         <th>Nama</th>
-                        <td><input type="text" name="nama"></td>
+                        <td><input type="text" name="namaMhs"></td>
                     </tr>
                     <tr>
                         <th>Nim</th>
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>Nilai</th>
-                        <td><input type="number" name="nilai" min=1 max=2></td>
+                        <td><input type="number" name="nilai" min=1 max=100></td>
                     </tr>
                     <tr>
                         <th>Nama Dosen</th>
@@ -69,14 +69,16 @@
             public $namaDosen;
             public $matkul; 
 
-            public function tampilkanNamaMhs(){
+            public function tampilkanNamaDosen(){
                 return $_POST['namaDosen'];
             }
-            public function tampilkanNim(){
+
+            public function tampilkanMatkul(){
                 return $_POST['matkul'];
             }
-            public function tampilkanStatus(){
-                if ($_POST['nilai'] > 85) {
+
+            public function tampilkanGrade(){
+                if ($_POST['nilai'] >= 85) {
                     return "grade A";
                 }
                 else if ($_POST['nilai'] >= 75) {
@@ -88,16 +90,53 @@
                 else {
                     return "grade D";
                 }
-                return $this->tampilkanStatus(); 
+                return $this->$grade; 
+            }
+
+            // public function tampilkanStatus(){
+            //     if ($_POST['nilai'] >= 85) {
+            //         return "grade A (Lulus)";
+            //     }
+            //     else if ($_POST['nilai'] >= 75) {
+            //         return "grade B (Lulus)";
+            //     }
+            //     else if ($_POST['nilai'] >= 65) {
+            //         return "grade C (Perbaikan)";
+            //     }
+            //     else {
+            //         return "grade D (Tidak Lulus)";
+            //     }
+            //     return $this->$grade; 
+            // }
+
+            public function tampilStatus(){
+                if ($_POST['nilai'] >= 85) {
+                    return "Lulus";
+                }
+                else if ($_POST['nilai'] >= 75) {
+                    return "Lulus";
+                }
+                else if ($_POST['nilai'] >= 65) {
+                    return "Perbaikan";
+                }
+                else {
+                    return "Tidak Lulus";
+                }
+                return $this->$status; 
             }
         }
 
-        $Mhs = new Mahasiswa($namaMhs, $nim, $nilai);
-        echo "Nama mahasiswa : " . $Mhs->tampilkanNama() . "<br>";
+        $mhs = new Mahasiswa($namaMhs, $nim, $nilai);
+        echo "Nama mahasiswa : " . $mhs->tampilkanNamaMhs() . "<br>";
+        echo "Nim : " . $mhs->tampilkanNim() . "<br>";
+        echo "Nilai : " . $mhs->tampilkanNilai() . "<br>";
+        $matakul = new Matkul($namaMhs, $nim, $nilai);
+        echo "Dosen : " . $matakul->tampilkanNamaDosen() . "<br>";
+        echo "Matakuliah : " . $matakul->tampilkanMatkul() . "<br>";
+        echo "Grade : " . $matakul->tampilkanGrade() . "<br>";
+        echo "Status : " . $matakul->tampilStatus() . "<br>";
+        // echo "Status : " . $matakul->tampilkanStatus() . "<br>";
         
-        $Mhs = new Matkul($namaMhs, $nim, $nilai);
-        echo "Status : " . $kucing->tampilkanStatus() . "<br>";
-
     }
 
 
